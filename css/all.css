@@ -1,0 +1,29 @@
+.h_popup_outbox {
+  position: fixed;
+  top: 50%;
+  right: 0;
+}
+.h_popup {
+  padding: 15px;
+  background-color: #fff;
+  z-index: 1000000;
+  max-height: 50vh;
+  overflow-y: auto;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.h_open {
+  display: block;
+  top: -30px;
+  right: 0px;
+  width: 30px;
+  height: 30px;
+  background: #1ea69a;
+  color: white !important;
+  text-align: center;
+  line-height: 30px;
+  position: absolute;
+}
+.h_open:hover {
+  background: #15746c;
+  color: white;
+}

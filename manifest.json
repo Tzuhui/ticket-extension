@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "name": "ticket extension",
+  "version": "1",
+  "description": "搶票輔助",
+  "browser_action": {
+    "default_icon": "img/tzu.png",
+    "default_title": "搶票輔助"
+  },
+  "background": {
+    "scripts": [
+      "background.js" 
+    ]
+  },
+  "permissions": [ "activeTab", "storage" ],
+  "options_page": "options.html",
+  "content_scripts" : [
+    {
+      "matches" : [ "https://tixcraft.com/ticket/ticket/*" ],
+      "run_at": "document_end",
+      "js" : [ "jquery.min.js", "js/ticket.js" ]
+    },
+    {
+      "matches" : [ "https://tixcraft.com/ticket/area/*" ],
+      "run_at": "document_end",
+      "js" : [ "jquery.min.js", "js/area.js" ]
+    },
+    {
+      "matches" : [ "https://tixcraft.com/*" ],
+      "run_at": "document_end",
+      "css": ["css/all.css"],
+      "js" : ["jquery.min.js", "js/detail.js" ]
+    }
+  ]
+}

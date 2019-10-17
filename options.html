@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Extension Options</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container mt-3">
+    <h2>設定頁面</h2>
+    <div>
+      <div class="form-group">
+        <label for="ProgramDate">節目日期 :</label>
+        <input type="date" id="ProgramDate" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="TicketNumber">購買票數 :</label>
+        <select class="form-control" id="TicketNumber">
+          <option value="0">最大張數</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="ProgramSit">位置選擇 :</label>
+        <input type="number" id="ProgramSit" class="form-control">
+      </div>
+    </div>
+    <p id="status"></p>
+    <button id="save" type="button" class="btn btn-info">儲存設定</button>
+  </div>
+  <script src="options.js"></script>
+</body>
+
+</html>
