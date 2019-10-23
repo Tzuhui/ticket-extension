@@ -22,7 +22,7 @@
     },
     {
       "matches" : [ "https://tixcraft.com/ticket/area/*" ],
-      "run_at": "document_end",
+      "run_at": "document_idle",
       "js" : [ "jquery.min.js", "js/area.js" ]
     },
     {

@@ -23,9 +23,14 @@ chrome.storage.local.get(['TicketNumber', 'ProgramDate', 'ProgramSit'], function
   '<br>' +'票區選擇'+ result.ProgramSit;
 });
 
-document.getElementById('startFight').addEventListener('click', startLoad);
+let githubURL = new URL(window.location);
+if (githubURL.searchParams.toString() == 'go=1') {
+  startLoad()
+}
 
+document.getElementById('startFight').addEventListener('click', startLoad);
 function startLoad() {
+  console.log('call')
   if ($(".activityContent ul.list-inline a").attr("href").match(/activity\/game\//)) {  
     // 當立即購票按鈕點擊後 href 有 activity game
     $.get($(".activityContent ul.list-inline a").attr("href"), function(response) {
@@ -51,7 +56,10 @@ function startLoad() {
         });
     });
   } else {
-    location.reload();
-    startLoad();
+    if (githubURL.searchParams.toString() == '') {
+      window.location.href = window.location + '?go=1';
+    }else {
+      window.location.href = window.location;
+    }
   }
 }
